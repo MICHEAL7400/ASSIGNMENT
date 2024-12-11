@@ -1,0 +1,118 @@
+/* General Reset for Padding and Margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Main Wrapper */
+.main-wraper {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+#header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+#header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Styling */
+#sidebar {
+    grid-area: sidebar;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    transition: background 0.3s;
+}
+
+#sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Content Area Styling */
+#content {
+    grid-area: content;
+    background-color: #fff;
+    padding: 2rem;
+}
+
+.main-content h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.main-content p {
+    margin-bottom: 1rem;
+}
+
+/* Footer Styling */
+#footer {
+    grid-area: footer;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    .main-wraper {
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "content"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    #header nav ul {
+        flex-direction: column;
+    }
+}
